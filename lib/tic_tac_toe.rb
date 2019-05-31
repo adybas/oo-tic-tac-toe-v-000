@@ -88,10 +88,10 @@ class TicTacToe
   end
 
 
-  def play(board)
+  def play
     player_turn = 0
-    while player_turn < 9 && !over?(board)
-      turn(board)
+    while player_turn < 9 && !over?
+      turn
       player_turn += 1
     end
     if draw?(board)
