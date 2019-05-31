@@ -47,6 +47,10 @@ class TicTacToe
     number_of_turns
   end
 
+  def current_player
+     turn_count.even? ? "X" : "O"
+   end
+
   def turn
     puts "Please enter 1-9:"
     input = gets.strip
@@ -60,9 +64,7 @@ class TicTacToe
     end
   end
 
- def current_player(board)
-    turn_count(board).even? ? "X" : "O"
-  end
+
 
   def won?(board)
     WIN_COMBINATIONS.detect do |combo|
