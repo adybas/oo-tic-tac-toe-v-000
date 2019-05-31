@@ -64,29 +64,27 @@ class TicTacToe
     end
   end
 
-
-
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.detect do |combo|
-      board[combo[0]] == board[combo[1]] && board[combo[1]] == board[combo[2]] && board[combo[0]] != " "
+      @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]] && @board[combo[0]] != " "
     end
   end
 
-  def full?(board)
-    board.all? {|letter| letter != " " }
+  def full?
+    @board.all? {|letter| letter != " " }
   end
 
-  def draw?(board)
-    full?(board) && !won?(board) ? true : false
+  def draw?
+    full? && !won? ? true : false
   end
 
-  def over?(board)
-    full?(board) || won?(board) || draw?(board)? true : false
+  def over?
+    full? || won? || draw? ? true : false
   end
 
-  def winner(board)
-    status = won?(board)
-    status.nil? ? nil : board[status[0]]
+  def winner
+    status = won?
+    status.nil? ? nil : @board[status[0]]
   end
 
 
