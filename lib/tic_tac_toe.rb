@@ -87,7 +87,6 @@ class TicTacToe
     status.nil? ? nil : @board[status[0]]
   end
 
-
   def play
     player_turn = 0
     while player_turn < 9 && !over?
