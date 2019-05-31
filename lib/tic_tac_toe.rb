@@ -94,7 +94,7 @@ class TicTacToe
       turn
       player_turn += 1
     end
-    if draw?(board)
+    if draw?
       puts "Cat's Game!"
     else
       puts "Congratulations #{winner(board)}!"
