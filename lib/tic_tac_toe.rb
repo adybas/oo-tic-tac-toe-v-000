@@ -83,8 +83,11 @@ class TicTacToe
   end
 
   def winner
-    status = won?
-    status.nil? ? nil : @board[status[0]]
+#    status = won?
+#    status.nil? ? nil : @board[status[0]]
+  if combo = won?
+    @board[combo[0]]
+  end
   end
 
   def play
@@ -99,5 +102,5 @@ class TicTacToe
       puts "Congratulations #{winner(@board)}!"
     end
   end
-  
+
 end
